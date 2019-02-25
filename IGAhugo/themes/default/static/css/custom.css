@@ -1,0 +1,89 @@
+
+tr:nth-child(even) {background: #ADCEF4}
+tr:nth-child(odd) {background: #FFF}
+.tiny {
+  font-size:9pt;
+}
+
+
+.personPage {
+  min-height: 600px;
+}
+
+
+
+html {
+  min-height: 100%;
+  position: relative;
+  body {
+    margin-bottom: 60px;
+  }
+  #footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 60px;
+    background-color: #f5f5f5;
+    .footer-block {
+      margin: 20px 0;
+    }
+  }
+}
+
+.carousel-item {
+  height: 625px;
+}
+
+.carousel-item img{
+  position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    height: 625px;
+}
+
+.carousel-summary {
+  color: #000;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.carousel-caption  i
+{
+  color: #000
+}
+
+.home_content_container
+{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+}
+.home_content
+{
+	width: 580px;
+}
+.home_title
+{
+	font-size: 60px;
+	font-weight: 600;
+	color: #000;
+	line-height: 1.2;
+}
+.home_title span
+{
+	color: #e95a5a;
+}
+.home_text
+{
+	margin-top: 7px;
+}
+.home_text p
+{
+	color: #FFFFFF;
+}

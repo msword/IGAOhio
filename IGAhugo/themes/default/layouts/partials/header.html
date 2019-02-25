@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">IGA OHIO</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  data-toggle="dropdown"
+        href="#">Coaches</a>
+        <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="/coach">View All</a>
+                <div class="dropdown-divider"></div>
+
+                  {{ range where .Site.Pages "Section" "coach" }}
+                    {{ if ne .Title "Coach" }}
+                      <a class="dropdown-item" href="/coach/{{.Title }}">{{.Params.name}}</a>
+                    {{end}}
+                  {{end}}
+              </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  data-toggle="dropdown"
+        href="#">Athletes</a>
+        <div class="dropdown-menu" aria-labelledby="themes">
+                <a class="dropdown-item" href="/athlete">View All</a>
+                <div class="dropdown-divider"></div>
+
+                  {{ range where .Site.Pages "Section" "athlete" }}
+                    {{ if ne .Title "Athlete" }}
+                      <a class="dropdown-item" href="/athlete/{{.Title }}">{{.Params.name}}</a>
+                    {{end}}
+                  {{end}}
+              </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle"  data-toggle="dropdown"
+        href="#">Competitions</a>
+        <div class="dropdown-menu" aria-labelledby="themes">
+
+              <a class="dropdown-item" href="/competitions/2019">2019 Results</a>
+              <a class="dropdown-item" href="/competitions/2018">2018 Results</a>
+
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>

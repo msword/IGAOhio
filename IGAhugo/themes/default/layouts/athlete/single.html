@@ -1,0 +1,58 @@
+{{- partial "head.html" . -}}
+
+{{- partial "header.html" . -}}
+<div class="container">
+<p />
+<br>
+<div class="personPage">
+<div class="row">
+  <div class="col-md-4">
+    {{if ne .Params.profileImage ""}}
+    <img src="{{.Params.profileImage}}" style="width:300px; height:auto;" alt="{{.Params.name}}" />
+    {{end}}
+  </div>
+  <div class="col-md-6">
+    <h2>{{.Params.name}}</h2>
+    <p />
+    <strong>Current Level: </strong> <span class="text-success"> <strong>{{ .Params.level}}</strong></span> <br>
+    <strong>Favorite Event: </strong> <span class="text-success"> <strong>{{ .Params.favorite_event}}</strong></span>
+    <p />
+    {{safeHTML .Params.info}}
+  </div>
+</div>
+<p />
+<br>
+<h3>Scores</h3>
+
+<table class="table">
+  <thead>
+    <th>Meet</th>
+    <th>Date</th>
+    <th>Level</th>
+    <th>Floor</th>
+    <th>Pomml</th>
+    <th>Rings</th>
+    <th>Vault</th>
+    <th>PBars</th>
+    <th>HIBar</th>
+    <th>AA</th>
+  </thead>
+{{ range $key, $value := .Params.scores }}
+  <tr>
+    <td>{{ $value.meet }}</td>
+    <td>{{ $value.meet_date}}</td>
+    <td>{{$value.level}}</td>
+    <td>{{ $value.floor_score }} ({{$value.floor_place}})</td>
+    <td>{{ $value.pommel_horse_score }} ({{$value.pommel_horse_place}})</td>
+    <td>{{ $value.rings_score }} ({{$value.rings_place}})</td>
+    <td>{{ $value.vault_score }} ({{$value.vault_place}})</td>
+    <td>{{ $value.pbars_score }} ({{$value.pbars_place}})</td>
+    <td>{{ $value.highbar_score }} ({{$value.highbar_place}})</td>
+    <td>{{ $value.all_around }} </td>
+  </tr>
+{{ end }}
+</table>
+</div>
+<p><br></p>
+</div>
+{{- partial "footer.html" . -}}

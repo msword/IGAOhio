@@ -1,0 +1,24 @@
+{{- partial "head.html" . -}}
+
+{{- partial "header.html" . -}}
+<div class="container">
+<div class="personPage">
+  <p><br></p>
+  <h2>Our Athletes</h2>
+{{.Content}}
+
+<table class="table">
+  <thead>
+    <th>Name</th><th>Current Level</th><th>Favorite Event</th>
+  </thead>
+    {{ range .Pages }}
+      <tr>
+          <td><a href="{{.URL}}">{{.Params.name}}</a> </td><td> {{.Params.level}} </td><td>{{ .Params.favorite_event}}
+      </tr>
+     {{ end }}
+   </table>
+</div>
+</div>
+
+
+{{- partial "footer.html" . -}}

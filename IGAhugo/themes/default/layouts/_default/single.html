@@ -1,0 +1,37 @@
+{{- partial "head.html" . -}}
+
+{{- partial "header.html" . -}}
+
+<div class="container">
+<div class="personPage">
+<p><br></p>
+<h2>{{.Title}}</h2>
+{{ if ne .Title "About"}}
+{{.Params.info}}   &nbsp; Website: <a href="{{.Params.link}}" target="_blank">{{.Params.link}}</a>
+{{end}}
+<p />
+<br>
+<div class="row">
+  <div class="col-md-6">
+      {{.Content}}
+  </div>
+  <div class="col-md-6">
+    <!--
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{.Title}}</div>
+      <div class="card-body">
+        <p class="card-text">{{.Params.info}}</p>
+        <a href="{{.Params.link}}" target="_blank">{{.Params.link}}</a>
+      </div>
+    </div>
+-->
+  <p />
+    {{ range .Params.images }}
+      <img src="https://via.placeholder.com/300.png?text=Picture+Goes+Here"> <p>
+    {{end}}
+
+  </div>
+</div>
+</div>
+</div>
+{{- partial "footer.html" . -}}

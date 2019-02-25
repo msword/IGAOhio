@@ -1,0 +1,35 @@
+{{- partial "head.html" . -}}
+
+{{- partial "header.html" . -}}
+<div class="container">
+<div class="personPage">
+<p><br></p>
+<h2>{{.Title}}</h2>
+<p />
+<br>
+<div class="row">
+  <div class="col-md-8">
+      {{.Content}}
+  </div>
+  <div class="col-md-4">
+
+  <p />
+  <div class="card bg-default mb-3" style="max-width: 20rem;">
+  <div class="card-header">Contact</div>
+  <div class="card-body">
+    <h4 class="card-title">Get more Info</h4>
+    <p class="card-text">
+      Steelwood Training Facility- OSU Gym <br>
+      1160 Steelwood Rd Columbus, Ohio <br>
+      (863) 409-9876
+      <p >
+      Practice Times: MTWTF 5:30pm - 8:30pm
+    </p>
+  </div>
+</div>
+
+  </div>
+</div>
+</div>
+</div>
+{{- partial "footer.html" . -}}
